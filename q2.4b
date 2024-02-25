@@ -1,0 +1,23 @@
+def count_and_display_words(file_path):
+    try:
+        # Open the file in text mode
+        with open(file_path, 'r') as file:
+            # Task 1: Count and display the total number of words
+            content = file.read()
+            words = content.split()
+            total_words = len(words)
+            print(f"1. Total number of words in the file: {total_words}")
+
+            # Task 2: Read lines from the text file
+            file.seek(0)  # Move the file pointer back to the beginning
+            print("\n2. Lines from the text file:")
+            for line in file:
+                print(line.strip())
+
+    except FileNotFoundError:
+        print(f"File '{file_path}' not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+# Replace 'your_file_path' with the path to your text file
+count_and_display_words('your_file_path')
