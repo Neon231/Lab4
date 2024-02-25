@@ -1,0 +1,15 @@
+def read_and_display(file_path):
+    try:
+        # Open the file in text mode
+        with open(file_path, 'r') as file:
+            # Read and display each line
+            for line in file:
+                print(line, end='')
+
+    except FileNotFoundError:
+        print(f"File '{file_path}' not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+# Replace 'your_file_path' with the path to your text file
+read_and_display('your_file_path')
