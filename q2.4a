@@ -1,0 +1,33 @@
+# Task 1: Write to a new file
+new_file_name = 'new_file.txt'
+content_to_write = "This is some content to write into the file."
+
+try:
+    with open(new_file_name, 'w') as file:
+        file.write(content_to_write)
+        print(f"Content written to '{new_file_name}' successfully.")
+except IOError as e:
+    print(f"Error writing to the file: {e}")
+
+# Task 2: Writing to an existing file
+existing_file_name = 'existing_file.txt'
+additional_content = "\nAppending more content to the existing file."
+
+try:
+    with open(existing_file_name, 'a') as file:
+        file.write(additional_content)
+        print(f"Content appended to '{existing_file_name}' successfully.")
+except IOError as e:
+    print(f"Error appending to the existing file: {e}")
+
+# Task 3: Write a list of lines to a file
+lines_to_write = ["Line 1", "Line 2", "Line 3"]
+list_file_name = 'list_file.txt'
+
+try:
+    with open(list_file_name, 'w') as file:
+        for line in lines_to_write:
+            file.write(line + '\n')
+        print(f"List of lines written to '{list_file_name}' successfully.")
+except IOError as e:
+    print(f"Error writing list of lines to the file: {e}")
