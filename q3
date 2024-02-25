@@ -1,0 +1,25 @@
+def file_operations(file_path):
+    # Open the file in binary mode for demonstration purposes
+    with open(file_path, 'rb') as file:
+        # Task 1: Seek the Beginning of the file
+        file.seek(0)
+        print(f"1. Position after seeking to the Beginning: {file.tell()}")
+
+        # Task 2: Seek the End of the file
+        file.seek(0, 2)
+        print(f"2. Position after seeking to the End: {file.tell()}")
+
+        # Task 3: Seek from The Current Position
+        file.seek(10, 1)
+        print(f"3. Position after seeking from Current Position: {file.tell()}")
+
+        # Task 4: Seek backward with Negative Offset
+        file.seek(-5, 1)
+        print(f"4. Position after seeking backward with Negative Offset: {file.tell()}")
+
+        # Task 5: Use tell() function to get file handle position
+        current_position = file.tell()
+        print(f"5. Current Position using tell(): {current_position}")
+
+# Replace 'your_file_path' with the path to your file
+file_operations('your_file_path')
