@@ -1,0 +1,31 @@
+import os
+from datetime import datetime
+
+# Task 1: Create a new empty text file named 'sales.txt'
+file_name = 'sales.txt'
+
+try:
+    with open(file_name, 'w') as file:
+        # Task 2: Create File with Datetime
+        current_datetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        file.write(f"File created on: {current_datetime}\n")
+except IOError as e:
+    print(f"Error creating the file: {e}")
+
+# Task 3: Create a file with Permission
+permission_file_name = 'sales_permission.txt'
+permissions = 0o644  # Example permissions, you can modify as needed
+
+try:
+    with open(permission_file_name, 'w') as file:
+        # Writing some content to the file
+        file.write("This file has custom permissions.\n")
+except IOError as e:
+    print(f"Error creating the permission file: {e}")
+
+# Setting custom permissions
+try:
+    os.chmod(permission_file_name, permissions)
+    print(f"File '{permission_file_name}' created with  permissions.")
+except OSError as e:
+    print(f"Error setting custom permissions: {e}")
