@@ -1,0 +1,18 @@
+def count_uppercase_characters(file_path):
+    try:
+        # Open the file in text mode
+        with open(file_path, 'r') as file:
+            # Read the content of the file
+            content = file.read()
+
+            # Count and display the uppercase characters
+            uppercase_count = sum(1 for char in content if char.isupper())
+            print(f"Total number of uppercase characters in the file: {uppercase_count}")
+
+    except FileNotFoundError:
+        print(f"File '{file_path}' not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+# Replace 'your_file_path' with the path to your text file
+count_uppercase_characters('your_file_path')
